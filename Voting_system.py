@@ -1,22 +1,25 @@
-print("options are BJP,SP,CNG,BSP,AAP")
-def cast_vote(votes, candidate):
-    if candidate in votes:
-        votes[candidate] += 1
+print("Options are: BJP, SP, CNG, BSP, AAP")
+
+def vote(v, c):
+    if c in v:
+        v[c] += 1
     else:
-        print(f'Error: {candidate} is not a valid candidate')
-def tally_votes(votes):
-    total_votes = 0
-    for candidate, count in votes.items():
-        total_votes += count
-        print(f'{candidate}: {count} votes')
-    print(f'Total votes: {total_votes}')
-candidates = input('Enter the candidates (separated by commas): ').split(',')
-votes = {}
-for candidate in candidates:
-    votes[candidate.strip()] = 0
-cast_vote(votes, 'BJP')
-cast_vote(votes, 'CNG')
-cast_vote(votes, 'SP')
-cast_vote(votes, 'AAP')
-cast_vote(votes, 'BSP')
-tally_votes(votes)
+        print(f'Error: {c} is not a valid candidate')
+
+def tally(v):
+    total = sum(v.values())
+    for c, count in v.items():
+        print(f'{c}: {count} votes')
+    print(f'Total votes: {total}')
+
+candidates_input = input('Enter the candidates (separated by commas): ')
+candidates = [c.strip() for c in candidates_input.split(',')]
+votes = {c: 0 for c in candidates}
+
+vote(votes, 'BJP')
+vote(votes, 'CNG')
+vote(votes, 'SP')
+vote(votes, 'AAP')
+vote(votes, 'BSP')
+
+tally(votes)
