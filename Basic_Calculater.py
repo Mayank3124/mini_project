@@ -68,7 +68,7 @@ def cube():
     cube =x**3
     return cube
 while True:
-    choice=int(input("enter your choice 1->sum 2->sub 3->div 4->mul 5->sqrt 6->pow 7->pow 8->log 9->sin 10->cos 11->tan 12->exp 13->fact 14->mod 15->sqr 16->cube 17->exit:"))
+    choice=int(input("enter your choice\n 1->sum\n 2->sub\n 3->div\n 4->mul\n 5->sqrt\n 6->pow\n 7->log\n 8->sin\n 9->cos\n 10->tan\n 11->exp\n 12->fact\n 13->mod\n 14->sqr\n 15->cube\n 16->exit\n:"))
     if choice==1:
        print(sum())
     elif choice==2:
